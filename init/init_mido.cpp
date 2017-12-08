@@ -34,6 +34,8 @@
 #include "log.h"
 #include "util.h"
 
+using android::init::property_set;
+
 char const *heapstartsize;
 char const *heapgrowthlimit;
 char const *heapsize;
@@ -85,14 +87,14 @@ void check_device()
         heapsize = "512m";
         heapminfree = "4m";
         heapmaxfree = "8m";
-	large_cache_height = "2048";
+        large_cache_height = "2048";
     } else if (sys.totalram > 2048ull * 1024 * 1024) {
         // from - phone-xxhdpi-3072-dalvik-heap.mk
         heapstartsize = "8m";
         heapgrowthlimit = "288m";
         heapsize = "768m";
         heapminfree = "512k";
-	heapmaxfree = "8m";
+        heapmaxfree = "8m";
         large_cache_height = "1024";
     } else {
         // from - phone-xxhdpi-2048-dalvik-heap.mk
