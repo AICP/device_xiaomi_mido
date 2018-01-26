@@ -43,6 +43,8 @@ setup_vendor "$DEVICE" "$VENDOR" "$AICP_ROOT"
 write_headers
 
 write_makefiles "$MY_DIR"/proprietary-files.txt
+echo "" >> "$PRODUCTMK"
+write_makefiles "$MY_DIR"/proprietary-files-qc.txt
 
 # Finish
 write_footers
